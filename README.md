@@ -4,7 +4,7 @@ rate limit library
 ```rust
 use once_cell::sync::Lazy;
 
-static THROTTLE: Lazy<Mutex<Throttle>> = Lazy::new(|| Mutex::new(Throttle::new(Duration::from_secs(1), 10)));
+static THROTTLE: Lazy<Mutex<Throttle>> = Lazy::new(|| Throttle::new(Duration::from_secs(1), 10));
 
 fn main(){
     if let Ok(mut throttle) = THROTTLE.lock() {
